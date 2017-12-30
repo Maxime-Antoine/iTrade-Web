@@ -6,15 +6,16 @@ import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
+import Header from './components/shared/Header';
 
 
 const App = () => (
     <div className="container-fluid">
-        <p>Header here</p>
         <BrowserRouter>
             <div>
-                <Route exact path='/' component={HomePage} />
-                <Route path='/about' component={AboutPage} />
+                <Header />
+                <Route exact path="/" component={HomePage} />
+                <Route path="/about" component={AboutPage} />
             </div>
         </BrowserRouter>
     </div>
