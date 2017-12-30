@@ -7,7 +7,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import HomePage from './components/home/HomePage';
 import AboutPage from './components/about/AboutPage';
 
-render((
+
+const App = () => (
     <div className="container-fluid">
         <p>Header here</p>
         <BrowserRouter>
@@ -17,4 +18,7 @@ render((
             </div>
         </BrowserRouter>
     </div>
-), document.getElementById('app'));
+);
+
+
+render(<App/>, document.getElementById('app'));
