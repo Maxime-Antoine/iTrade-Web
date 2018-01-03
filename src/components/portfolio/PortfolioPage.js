@@ -1,8 +1,9 @@
 import React from 'react';
+import PortfolioLine from './Portfolio';
 
 class PortfolioPage extends React.Component {
-    constructor(props, context){
-        super(props, context);
+    constructor(props){
+        super(props);
         this.state = {
             data: [
                 { name: 'Alphabet Inc', ticker: 'GOOG', price: 1070.64, change: 6.1, shares: 4, cost_basis: 2857 },
@@ -36,18 +37,14 @@ class PortfolioPage extends React.Component {
                     </thead>
                     <tbody>
                         {this.state.data.map((row, i) =>
-                            <tr key={i}>
-                                <td>{row.name}</td>
-                                <td>{row.ticker}</td>
-                                <td>{row.price.toFixed(2)}</td>
-                                <td>{row.change.toString() + `(${((row.change / (row.price-row.change)) * 100).toFixed(2)}%)` }</td>
-                                <td>{row.shares}</td>
-                                <td>{row.cost_basis.toFixed(2)}</td>
-                                <td>{(row.shares * row.price).toFixed(2)}</td>
-                                <td>{((row.shares * row.price) - row.cost_basis).toFixed(2)}</td>
-                                <td>{(row.change * row.shares).toFixed(2)}</td>
-                                <td>{(((row.shares * row.price / row.cost_basis) - 1) * 100).toFixed(2) + '%'}</td>
-                            </tr>
+                            <PortfolioLine key={i}
+                                name={row.name}
+                                ticker={row.ticker}
+                                price={row.price}
+                                change={row.change}
+                                shares={row.shares}
+                                cost_basis={row.cost_basis}
+                            />
                         )}
                     </tbody>
                 </table>
