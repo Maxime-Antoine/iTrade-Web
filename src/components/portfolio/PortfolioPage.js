@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioLine from './Portfolio';
+import PortfolioLine from './PortfolioLine';
 
 class PortfolioPage extends React.Component {
     constructor(props){
