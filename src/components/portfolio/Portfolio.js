@@ -16,7 +16,23 @@ class PortfolioLine extends React.Component {
             gain: gain,
             day_gain: props.change * props.shares,
             gain_pct: gain / props.cost_basis * 100
-        }
+        };
+    }
+
+    componentWillReceiveProps(props){
+        let market_value = props.shares * props.price;
+        let gain = market_value - props.cost_basis;
+        this.setState({
+            price: props.price,
+            change: props.change,
+            change_pct: props.change / (props.price - props.change) * 100,
+            shares: props.shares,
+            cost_basis: props.cost_basis,
+            market_value: market_value,
+            gain: gain,
+            day_gain: props.change * props.shares,
+            gain_pct: gain / props.cost_basis * 100
+        });
     }
 
     render(){
@@ -33,7 +49,7 @@ class PortfolioLine extends React.Component {
                 <td>{this.state.day_gain.toFixed(2)}</td>
                 <td>{this.state.gain_pct.toFixed(2) + '%'}</td>
             </tr>
-        )
+        );
     }
 }
 
@@ -44,6 +60,6 @@ PortfolioLine.propTypes = {
     change: PropTypes.number.isRequired,
     shares: PropTypes.number.isRequired,
     cost_basis: PropTypes.number.isRequired
-}
+};
 
 export default PortfolioLine;

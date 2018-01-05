@@ -12,6 +12,23 @@ class PortfolioPage extends React.Component {
                 { name: 'Facebook', ticker: 'FB', price: 183.25, change: 1.83, shares: 30, cost_basis: 3256.10 }
             ]
         };
+
+        this.interval = setInterval(this.onReceiveNewData, 1000, this);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    }
+
+    onReceiveNewData(that){
+        const new_data = [
+            { name: 'Alphabet Inc', ticker: 'GOOG', price: 1070.64 * (1 + Math.random() / 10), change: 6.1, shares: 4, cost_basis: 2857 },
+            { name: 'Gilead Inc', ticker: 'GILD', price: 74.18 * (1 + Math.random() / 10), change: 0.04, shares: 50, cost_basis: 4684.98 },
+            { name: 'Celgene', ticker: 'CELG', price: 108.32 * (1 + Math.random() / 10), change: 2.15, shares: 25, cost_basis: 2841.25 },
+            { name: 'Facebook', ticker: 'FB', price: 183.25 * (1 + Math.random() / 10), change: 1.83, shares: 30, cost_basis: 3256.10 }
+        ];
+
+        that.setState({ data: new_data });
     }
 
     render(){
