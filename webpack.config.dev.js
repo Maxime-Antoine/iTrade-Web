@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 
 module.exports = {
+  noInfo: true,
   devtool: 'inline-source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
