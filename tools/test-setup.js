@@ -34,8 +34,9 @@ require.extensions['.jpg'] = function () {return null;};
 var jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 
-global.document = new JSDOM('');
-global.window = document.window;
+const dom = new JSDOM('<!DOCTYPE html><html><head></head><body></body></html>');
+global.window = dom.window;
+global.document = dom.window.document;
 
 global.navigator = {
   userAgent: 'node.js'
