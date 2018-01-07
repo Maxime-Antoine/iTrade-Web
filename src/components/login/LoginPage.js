@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './login-page.css';
 
 class LoginPage extends React.Component {
@@ -16,6 +17,8 @@ class LoginPage extends React.Component {
                     </div>
                     <button type="button" className="btn btn-primary">Login</button>
                 </form>
+                <br />
+                <p>No account yet ? <Link to="/register">Register !</Link></p>
             </div>
         );
     }
