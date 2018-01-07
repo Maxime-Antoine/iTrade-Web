@@ -9,6 +9,7 @@ import HomePage from './components/home/HomePage';
 import PortfolioPage from './components/portfolio/PortfolioPage';
 import AboutPage from './components/about/AboutPage';
 import LoginPage from './components/login/LoginPage';
+import RegisterPage from './components/register/RegisterPage';
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
                 <Route path="/portfolio" component={PortfolioPage} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/login" component={LoginPage} />
+                <Route path="/register" component={RegisterPage} />
             </div>
         </BrowserRouter>
     </div>
