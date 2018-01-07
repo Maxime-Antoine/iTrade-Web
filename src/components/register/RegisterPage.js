@@ -1,4 +1,5 @@
 import React from 'React';
+import {Link} from 'react-router-dom';
 import './register-page.css';
 
 class RegisterPage extends React.Component {
@@ -20,6 +21,8 @@ class RegisterPage extends React.Component {
                     </div>
                     <button type="button" className="btn btn-primary">Register</button>
                 </form>
+                <br />
+                <p>Already have an account ? <Link to="/login">Login !</Link></p>
             </div>
         );
     }
