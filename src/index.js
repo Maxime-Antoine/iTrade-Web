@@ -8,6 +8,7 @@ import Header from './components/shared/Header';
 import HomePage from './components/home/HomePage';
 import PortfolioPage from './components/portfolio/PortfolioPage';
 import AboutPage from './components/about/AboutPage';
+import LoginPage from './components/login/LoginPage';
 
 
 const App = () => (
@@ -18,6 +19,7 @@ const App = () => (
                 <Route exact path="/" component={HomePage} />
                 <Route path="/portfolio" component={PortfolioPage} />
                 <Route path="/about" component={AboutPage} />
+                <Route path="/login" component={LoginPage} />
             </div>
         </BrowserRouter>
     </div>
