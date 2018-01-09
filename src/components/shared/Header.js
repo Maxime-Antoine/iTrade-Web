@@ -8,6 +8,8 @@ const Header = () => {
             {"|"}
             <Link to="/portfolio">Portfolio</Link>
             {"|"}
+            <Link to="/transaction">Transactions</Link>
+            {"|"}
             <Link to="/about">About</Link>
             {"|"}
             <Link to="/login">Login</Link>

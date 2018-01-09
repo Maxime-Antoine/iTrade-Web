@@ -7,6 +7,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/shared/Header';
 import HomePage from './components/home/HomePage';
 import PortfolioPage from './components/portfolio/PortfolioPage';
+import TransactionPage from './components/transactions/TransactionPage';
 import AboutPage from './components/about/AboutPage';
 import LoginPage from './components/login/LoginPage';
 import RegisterPage from './components/register/RegisterPage';
@@ -19,6 +20,7 @@ const App = () => (
                 <Header />
                 <Route exact path="/" component={HomePage} />
                 <Route path="/portfolio" component={PortfolioPage} />
+                <Route path="/transaction" component={TransactionPage} />
                 <Route path="/about" component={AboutPage} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/register" component={RegisterPage} />
