@@ -1,0 +1,31 @@
+#add-transaction-inline-form {
+    min-width: 900px;
+}
+
+#add-transaction-inline-form input {
+    margin: 5px 5px 5px 5px;
+}
+
+#ticker-input-group input {
+    width: 75px;
+}
+
+#type-input-group input {
+    width: 75px;
+}
+
+#date-input-group input {
+    width: 150px;
+}
+
+#price-input-group input {
+    width: 100px;
+}
+
+#shares-input-group input {
+    width: 85px;
+}
+
+#fee-input-group input {
+    width: 75px;
+}

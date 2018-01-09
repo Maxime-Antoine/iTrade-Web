@@ -1,5 +1,6 @@
 import React from 'react';
 import PortfolioLine from './PortfolioLine';
+import AddTransactionLine from '../transactions/AddTransactionLine';
 
 class PortfolioPage extends React.Component {
     constructor(props){
@@ -34,9 +35,9 @@ class PortfolioPage extends React.Component {
     render(){
         return (
             <div>
-            <br />
-            <br />
-            <br />
+                <br />
+                <br />
+                <br />
                 <table className="table table-hover">
                     <thead>
                         <tr>
@@ -65,6 +66,7 @@ class PortfolioPage extends React.Component {
                         )}
                     </tbody>
                 </table>
+                <AddTransactionLine />
             </div>
         );
     }
