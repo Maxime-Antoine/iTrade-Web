@@ -1,5 +1,5 @@
 import React from 'react';
-import expect from 'expect';
+import {expect} from 'chai';
 import Enzyme, {shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import TransactionLine from './TransactionLine';
@@ -7,15 +7,15 @@ import TransactionLine from './TransactionLine';
 Enzyme.configure({ adapter: new Adapter() });
 
 const compare = (component, expected) => {
-    expect(component.find('tr').children().length).toBe(8);
-    expect(component.find('tr').childAt(0).text()).toBe(expected.name);
-    expect(component.find('tr').childAt(1).text()).toBe(expected.ticker);
-    expect(component.find('tr').childAt(2).text()).toBe(expected.type);
-    expect(component.find('tr').childAt(3).text()).toBe(expected.date);
-    expect(component.find('tr').childAt(4).text()).toBe(expected.price);
-    expect(component.find('tr').childAt(5).text()).toBe(expected.shares.toString());
-    expect(component.find('tr').childAt(6).text()).toBe(expected.fee);
-    expect(component.find('tr').childAt(7).text()).toBe(expected.cash_value);
+    expect(component.find('tr').children()).to.have.length(8);
+    expect(component.find('tr').childAt(0).text()).to.equal(expected.name);
+    expect(component.find('tr').childAt(1).text()).to.equal(expected.ticker);
+    expect(component.find('tr').childAt(2).text()).to.equal(expected.type);
+    expect(component.find('tr').childAt(3).text()).to.equal(expected.date);
+    expect(component.find('tr').childAt(4).text()).to.equal(expected.price);
+    expect(component.find('tr').childAt(5).text()).to.equal(expected.shares.toString());
+    expect(component.find('tr').childAt(6).text()).to.equal(expected.fee);
+    expect(component.find('tr').childAt(7).text()).to.equal(expected.cash_value);
 };
 
 describe('TransactionLine should', () => {
