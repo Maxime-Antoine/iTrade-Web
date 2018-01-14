@@ -25,14 +25,25 @@ class AddTransactionLine extends React.Component {
 
     onAddTransaction(){
         const trx = {
-            ticker: this.ticker,
-            type: this.type,
-            date: this.date,
-            price: this.price,
-            shares: this.shares,
-            fee: this.fee
+            ticker: this.state.ticker,
+            type: this.state.type,
+            date: this.state.date,
+            price: this.state.price,
+            shares: this.state.shares,
+            fee: this.state.fee
         };
-        this.props.addTransaction(trx);
+        if (this.transactionIsValid())  this.props.addTransaction(trx);
+    }
+
+    transactionIsValid(){
+        if (!this.state.ticker) return false;
+        if (!this.state.type) return false;
+        if (!this.state.date) return false;
+        if (this.state.price == '' || this.state.price < 0) return false;
+        if (!this.state.shares) return false;
+        if (this.state.fee == '' || this.state.fee < 0) return false;
+
+        return true;
     }
 
     onTickerChange(event){
