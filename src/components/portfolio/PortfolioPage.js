@@ -32,6 +32,10 @@ class PortfolioPage extends React.Component {
         that.setState({ data: new_data });
     }
 
+    addTransaction(trx){
+        //TODO
+    }
+
     render(){
         return (
             <div>
@@ -66,7 +70,7 @@ class PortfolioPage extends React.Component {
                         )}
                     </tbody>
                 </table>
-                <AddTransactionLine />
+                <AddTransactionLine addTransaction={this.addTransaction}/>
             </div>
         );
     }
