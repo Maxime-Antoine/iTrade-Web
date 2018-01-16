@@ -18,7 +18,7 @@ class AddTransactionLine extends React.Component {
         this.onTickerChange = this.onTickerChange.bind(this);
         this.onTypeChange = this.onTypeChange.bind(this);
         this.onDateChange = this.onDateChange.bind(this);
-        this.onPriceChange = this.onDateChange.bind(this);
+        this.onPriceChange = this.onPriceChange.bind(this);
         this.onSharesChange = this.onSharesChange.bind(this);
         this.onFeeChange = this.onFeeChange.bind(this);
     }
@@ -26,7 +26,7 @@ class AddTransactionLine extends React.Component {
     onAddTransaction(){
         const trx = {
             ticker: this.state.ticker,
-            type: this.state.type,
+            trx_type: this.state.trx_type,
             date: this.state.date,
             price: this.state.price,
             shares: this.state.shares,
@@ -37,7 +37,7 @@ class AddTransactionLine extends React.Component {
 
     transactionIsValid(){
         if (!this.state.ticker) return false;
-        if (!this.state.type) return false;
+        if (!this.state.trx_type) return false;
         if (!this.state.date) return false;
         if (this.state.price == '' || this.state.price < 0) return false;
         if (!this.state.shares) return false;
@@ -51,7 +51,7 @@ class AddTransactionLine extends React.Component {
     }
 
     onTypeChange(event){
-        this.setState({ type: event.target.type });
+        this.setState({ trx_type: event.target.trx_type });
     }
 
     onDateChange(event){
@@ -75,11 +75,11 @@ class AddTransactionLine extends React.Component {
             <form className="form-inline" id="add-transaction-inline-form">
                 <div className="form-group mb-2" id="ticker-input-group">
                     <label htmlFor="ticker-input">Ticker</label>
-                    <input id="ticker-input" type="text" className="form-control" value={this.state.ticker} />
+                    <input id="ticker-input" type="text" className="form-control" value={this.state.ticker} onChange={this.onTickerChange} />
                 </div>
                 <div className="form-group mb-2" id="type-input-group">
                     <label htmlFor="type-input">Type</label>
-                    <input id="type-input" list="trx-type" className="form-control" value={this.state.type} />
+                    <input id="type-input" list="trx-type" className="form-control" value={this.state.trx_type} onChange={this.onTypeChange} />
                     <datalist id="trx-type">
                         <option value="Buy" />
                         <option value="Sell" />
@@ -87,19 +87,19 @@ class AddTransactionLine extends React.Component {
                 </div>
                 <div className="form-group mb-2" id="date-input-group">
                     <label htmlFor="date-input">Date</label>
-                    <input id="date-input" type="date" className="form-control" value={this.state.date} />
+                    <input id="date-input" type="date" className="form-control" value={this.state.date} onChange={this.onDateChange} />
                 </div>
                 <div className="form-group mb-2" id="price-input-group">
                     <label htmlFor="price-input">Price</label>
-                    <input id="price-input" type="number" className="form-control" value={this.state.price} />
+                    <input id="price-input" type="number" className="form-control" value={this.state.price} onChange={this.onPriceChange} />
                 </div>
                 <div className="form-group mb-2" id="shares-input-group">
                     <label htmlFor="shares-input">Shares</label>
-                    <input id="shares-input" type="number" className="form-control" value={this.state.shares} />
+                    <input id="shares-input" type="number" className="form-control" value={this.state.shares} onChange={this.onSharesChange} />
                 </div>
                 <div className="form-group mb-2" id="fee-input-group">
                     <label htmlFor="fee-input">Fee</label>
-                    <input id="fee-input" type="number" className="form-control" value={this.state.fee} />
+                    <input id="fee-input" type="number" className="form-control" value={this.state.fee} onChange={this.onFeeChange} />
                 </div>
                 <button type="button" className="btn btn-primary" onClick={this.onAddTransaction}>Add</button>
             </form>
