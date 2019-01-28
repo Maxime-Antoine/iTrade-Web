@@ -1,24 +1,20 @@
 import React from 'react';
-import {expect} from 'chai';
-import Enzyme, {shallow} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import {shallow} from 'enzyme';
 import PortfolioLine from './PortfolioLine';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('PortfolioLine should', () => {
     const compare = (component, expected) => {
-        expect(component.find('tr').children()).to.have.length(10);
-        expect(component.find('tr').childAt(0).text()).to.equal(expected.name);
-        expect(component.find('tr').childAt(1).text()).to.equal(expected.ticker);
-        expect(component.find('tr').childAt(2).text()).to.equal(expected.price);
-        expect(component.find('tr').childAt(3).text()).to.equal(expected.change);
-        expect(component.find('tr').childAt(4).text()).to.equal(expected.shares.toString());
-        expect(component.find('tr').childAt(5).text()).to.equal(expected.cost_basis);
-        expect(component.find('tr').childAt(6).text()).to.equal(expected.market_value);
-        expect(component.find('tr').childAt(7).text()).to.equal(expected.gain);
-        expect(component.find('tr').childAt(8).text()).to.equal(expected.day_gain);
-        expect(component.find('tr').childAt(9).text()).to.equal(expected.gain_pct);
+        expect(component.find('tr').children()).toHaveLength(10);
+        expect(component.find('tr').childAt(0).text()).toEqual(expected.name);
+        expect(component.find('tr').childAt(1).text()).toEqual(expected.ticker);
+        expect(component.find('tr').childAt(2).text()).toEqual(expected.price);
+        expect(component.find('tr').childAt(3).text()).toEqual(expected.change);
+        expect(component.find('tr').childAt(4).text()).toEqual(expected.shares.toString());
+        expect(component.find('tr').childAt(5).text()).toEqual(expected.cost_basis);
+        expect(component.find('tr').childAt(6).text()).toEqual(expected.market_value);
+        expect(component.find('tr').childAt(7).text()).toEqual(expected.gain);
+        expect(component.find('tr').childAt(8).text()).toEqual(expected.day_gain);
+        expect(component.find('tr').childAt(9).text()).toEqual(expected.gain_pct);
     };
 
     it('render with correct props', () => {

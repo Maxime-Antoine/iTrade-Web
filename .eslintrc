@@ -1,17 +1,21 @@
 {
+  "root": true,
   "extends": [
-    "eslint:recommended"
-    // "plugin:import/errors",
-    // "plugin:import/warnings"
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended"
   ],
   "plugins": [
     "react"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     }
   },
   "env": {
@@ -19,7 +23,7 @@
     "browser": true,
     "node": true,
     "jquery": true,
-    "mocha": true
+    "jest": true
   },
   "rules": {
     "quotes": 0,

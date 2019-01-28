@@ -32,7 +32,7 @@ class PortfolioPage extends React.Component {
         that.setState({ data: new_data });
     }
 
-    addTransaction(trx){
+    addTransaction(trx){  // eslint-disable-line no-unused-vars
         //TODO
     }
 
@@ -53,7 +53,7 @@ class PortfolioPage extends React.Component {
                             <th scope="col">Cost Basis</th>
                             <th scope="col">Market Value</th>
                             <th scope="col">Gain</th>
-                            <th scope="col">Day's gain</th>
+                            <th scope="col">Day&apos;s gain</th>
                             <th scope="col">Gain %</th>
                         </tr>
                     </thead>
